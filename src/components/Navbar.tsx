@@ -3,12 +3,13 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "About Us", href: "#" },
-  { label: "Courses", href: "#" },
-  { label: "Instructors", href: "#" },
-  { label: "Testimonials", href: "#" },
-  { label: "Blog", href: "#" },
+  { label: "Home", href: "#hero" },
+  { label: "Profile", href: "#profile" },
+  { label: "Leadership", href: "#strengths" },
+  { label: "Tools", href: "#tools" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "Achievements", href: "#achievements" },
+  { label: "Experience", href: "#experience" },
 ];
 
 export default function Navbar() {
@@ -19,18 +20,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div className="flex items-center justify-between">
 
-          {/* ── Logo ── */}
-          <a href="#" className="flex items-center gap-2.5 flex-shrink-0">
-            {/* Circular logo mark */}
+          {/* Logo */}
+          <a href="#hero" className="flex items-center gap-2.5 flex-shrink-0">
             <div className="relative w-8 h-8 rounded-full border-2 border-white flex items-center justify-center">
               <div className="w-3 h-3 rounded-full bg-white" />
             </div>
             <span className="text-white font-semibold text-sm tracking-tight">
-              DesignPro
+              Abinaya Rajendran
             </span>
           </a>
 
-          {/* ── Desktop Nav pill ── */}
+          {/* Desktop Nav pill */}
           <div className="hidden lg:flex items-center">
             <div className="flex items-center gap-1 border border-neutral-700 rounded-full px-3 py-2">
               {NAV_LINKS.map((link) => (
@@ -45,13 +45,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ── Desktop CTA — "Contact us" with arrow ── */}
+          {/* Contact CTA */}
           <div className="hidden lg:flex items-center">
             <a
-              href="#"
+              href="#contact"
               className="group flex items-center gap-1.5 text-white/80 hover:text-white text-sm transition-colors duration-200 border border-neutral-700 rounded-full px-4 py-2 hover:border-neutral-500"
             >
-              Contact us
+              Contact
               <ArrowUpRight
                 size={14}
                 className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -59,7 +59,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* ── Mobile: hamburger ── */}
+          {/* Mobile hamburger */}
           <button
             className="lg:hidden text-white/80 hover:text-white transition-colors p-1"
             onClick={() => setMobileOpen((o) => !o)}
@@ -69,7 +69,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ── Mobile dropdown ── */}
+        {/* Mobile dropdown */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -92,10 +92,11 @@ export default function Navbar() {
                 ))}
                 <div className="mt-1 pt-2 border-t border-neutral-700/50">
                   <a
-                    href="#"
+                    href="#contact"
                     className="flex items-center gap-1.5 text-white/80 hover:text-white text-sm px-4 py-2.5 rounded-xl transition-colors duration-200 hover:bg-white/5"
+                    onClick={() => setMobileOpen(false)}
                   >
-                    Contact us <ArrowUpRight size={14} />
+                    Contact <ArrowUpRight size={14} />
                   </a>
                 </div>
               </div>
